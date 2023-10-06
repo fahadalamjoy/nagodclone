@@ -15,10 +15,11 @@ export default function Home() {
     setPaymentsData(PaymentData);
   })
   return (
+    <SafeAreaView >
     <ScrollView>
-    <SafeAreaView style={tw``}>
         <StatusBar
-        barStyle="auto"/>
+        backgroundColor="white"
+        barStyle="dark-content"/>
       <View >
         <ImageBackground
           source={require('../../assets/backimage.png')}
@@ -94,7 +95,7 @@ export default function Home() {
         })
       }
       </View>
-    </SafeAreaView>
     </ScrollView>
+    </SafeAreaView>
   )
 }
