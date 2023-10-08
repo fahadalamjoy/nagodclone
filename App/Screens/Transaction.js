@@ -4,6 +4,8 @@ import { AntDesign } from '@expo/vector-icons';
 import { TabView, TabBar } from 'react-native-tab-view';
 import tw from 'twrnc';
 import TabOne from '../components/TabOne';
+import TabTwo from '../components/TabTwo';
+import TabThree from '../components/TabThree';
 
 export default function Transaction() {
   const [index, setIndex] = useState(0);
@@ -21,15 +23,11 @@ export default function Transaction() {
         );
       case 'tab2':
         return (
-          <View style={tw`flex-1 justify-center items-center`}>
-            <Text>Tab 2 Content</Text>
-          </View>
+          <TabTwo />
         );
       case 'tab3':
         return (
-          <View style={tw`flex-1 justify-center items-center`}>
-            <Text>Tab 3 Content</Text>
-          </View>
+          <TabThree />
         );
       default:
         return null;
@@ -40,7 +38,7 @@ export default function Transaction() {
     <TabBar
       {...props}
       indicatorStyle={tw`bg-red-500 `}
-      style={tw`bg-white mt-4`}
+      style={tw`bg-white mt-2`}
       labelStyle={tw`text-gray-600`}
     />
   );
