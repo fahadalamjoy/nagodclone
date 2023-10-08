@@ -5,6 +5,7 @@ import { Image } from 'react-native';
 import ImagePath from '../constants/ImagePath';
 import tw from 'twrnc';
 import People from '../Screens/People';
+import MyNagad from '../Screens/MyNagad';
 
 export default function BottomTabs() {
     const Tab = createBottomTabNavigator();
@@ -12,7 +13,7 @@ export default function BottomTabs() {
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        headerShown: false,
+        // headerShown: false,
         tabBarActiveTintColor: 'tomato',
         tabBarInactiveTintColor: 'gray',
         tabBarStyle: {
@@ -25,6 +26,7 @@ export default function BottomTabs() {
     >
       <Tab.Screen name="Home" component={Home} 
          options={{
+          headerShown: false,
            tabBarIcon: ({focused}) => {
              return (
                <Image style={{tintColor : focused ? 'tomato' : 'gray'}} source={ImagePath.HomeIcon}  />
@@ -34,6 +36,7 @@ export default function BottomTabs() {
       />
       <Tab.Screen name="Transaction" component={Transaction} 
          options={{
+          headerShown: false,
            tabBarIcon: ({focused}) => {
              return (
                <Image style={{tintColor : focused ? 'tomato' : 'gray'}} source={ImagePath.TransactionIcon} />
@@ -43,6 +46,7 @@ export default function BottomTabs() {
       />
       <Tab.Screen name="People" component={People} 
          options={{
+          headerShown: false,
            tabBarIcon: ({focused}) => {
              return (
                <Image style={{tintColor : focused ? 'tomato' : 'gray'}} source={ImagePath.PeopleIcon}/>
@@ -50,8 +54,16 @@ export default function BottomTabs() {
            }
          }}
       />
-      <Tab.Screen name="My Nagad" component={Transaction} 
+      <Tab.Screen name="My Nagad" component={MyNagad} 
+        
          options={{
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: 'red',
+          },
+          headerTitleStyle: {
+            color: 'white',
+          },
            tabBarIcon: ({focused}) => {
              return (
                <Image style={{tintColor : focused ? 'tomato' : 'gray'}} source={ImagePath.MynagadIcon}/>
