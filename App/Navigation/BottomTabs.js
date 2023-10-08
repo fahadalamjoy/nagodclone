@@ -4,6 +4,7 @@ import Transaction from '../Screens/Transaction';
 import { Image } from 'react-native';
 import ImagePath from '../constants/ImagePath';
 import tw from 'twrnc';
+import People from '../Screens/People';
 
 export default function BottomTabs() {
     const Tab = createBottomTabNavigator();
@@ -40,7 +41,7 @@ export default function BottomTabs() {
            }
          }}
       />
-      <Tab.Screen name="People" component={Transaction} 
+      <Tab.Screen name="People" component={People} 
          options={{
            tabBarIcon: ({focused}) => {
              return (
