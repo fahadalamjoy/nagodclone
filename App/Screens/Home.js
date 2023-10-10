@@ -50,10 +50,10 @@ export default function Home() {
         CerviceData.map((item) => {
           return (
             <View style={tw` m-0 `}>
-            <View key={item.id} style={tw`items-center justify-center`}>
+            <TouchableOpacity key={item.id} style={tw`items-center justify-center`} onPress={() => navigator.navigate('ScreenOne')}>
               <Image source={item.img}  />
               <Text style={tw`text-xs font-light text-gray-500 py-1`}>{item.title}</Text>
-            </View>
+            </TouchableOpacity>
             </View>
           )
         })
@@ -63,7 +63,7 @@ export default function Home() {
         <Text style={tw`text-base font-bold text-gray-600`}>Payments</Text>
 
       </View>
-      <View style={tw`flex-row flex-wrap gap-2 items-center justify-center `}>
+      <View style={tw`flex-row flex-wrap pl-5 gap-2 items-center justify-start `}>
       {
         PaymentsData.map((item) => {
           return (

@@ -3,8 +3,11 @@ import React, { useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { Image } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native';
 
 export default function Login() {
+  const navigator = useNavigation();
   const [password, setPassword] = useState(''); 
   
     // State variable to track password visibility 
@@ -68,6 +71,8 @@ export default function Login() {
             fontWeight: "bold",
             marginTop: 5,
             color: "black",
+            opacity: 0.8,
+            
           }}
         >
           01679104689
@@ -76,6 +81,7 @@ export default function Login() {
           <TextInput
             // Set secureTextEntry prop to hide
             //password when showPassword is false
+            keyboardType="phone-pad"
             secureTextEntry={!showPassword}
             value={password}
             onChangeText={setPassword}
@@ -94,12 +100,14 @@ export default function Login() {
             onPress={toggleShowPassword}
           />
         </View>
-        <View style={{ marginTop: 20, borderRadius: 60, alignItems: "center", backgroundColor: "tomato", padding: 10,paddingLeft: 90,paddingRight: 90 }}>
+        <TouchableOpacity style={{ marginTop: 20, borderRadius: 60, alignItems: "center", backgroundColor: "tomato", padding: 10,paddingLeft: 90,paddingRight: 90 }} 
+          onPress={() => navigator.navigate("BottomTabs")}
+        >
           <Text style={{ fontSize: 18, color: "white" }}>
             Login
           </Text>
           
-        </View>
+        </TouchableOpacity>
 
       </View>
       <View style={{ flexDirection: "row", justifyContent: "space-around", alignItems: "center", marginTop: 20 ,marginBottom: 10 }}>
