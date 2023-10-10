@@ -6,8 +6,11 @@ import { Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import ServiceData from '../data/Data';
 import PaymentData from '../data/PaymentsData';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native';
 
 export default function Home() {
+  const navigator = useNavigation();
   const [CerviceData, setServiceData] = React.useState([]);
   const [PaymentsData, setPaymentsData] = React.useState([]);
   useEffect(() => {
@@ -28,12 +31,12 @@ export default function Home() {
             <Text style={tw`text-5xl font-bold text-white`}>নগদ </Text>
             <Text style={tw`text-xs text-white`}>ডাক বিভাগের ডিজিটাল লেনদেন </Text>
             <Text style={tw`text-base text-white py-2`}>Fahad Alam Joy </Text>
-            <View style={tw`bg-white py-2 items-center  justify-between rounded-full px-3`}>
+            <TouchableOpacity style={tw`bg-white py-2 items-center  justify-between rounded-full px-3`} onPress={() => navigator.navigate('Login')}>
                 <View style={tw`flex-row items-center justify-center `}>
                     <Image source={require('../../assets/home.png')}/>
                     <Text style={tw`pl-2 text-sm text-red-500 font-bold`}>Tab for Balance</Text>
                 </View>
-            </View>
+            </TouchableOpacity>
           </View>
         </ImageBackground>
       </View >
