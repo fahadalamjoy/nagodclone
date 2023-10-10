@@ -12,9 +12,9 @@ export default function Navigation() {
         
       }}
     >
+      <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
       <Stack.Screen name="Notifications" component={People} />
-      <Stack.Screen name="Login" component={Login} />
     </Stack.Navigator>
   )
 }
