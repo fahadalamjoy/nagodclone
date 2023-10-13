@@ -9,6 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Image } from 'react-native';
 
 export default function ScreenTwo({ navigation }) {
+  const navigator = useNavigation()
   const [isClicked, setIsClicked] = useState(false);
   const [gp, setIsClickedGP] = useState(false);
 
@@ -19,8 +20,8 @@ export default function ScreenTwo({ navigation }) {
   const handleViewClickGp = () => {
     // Toggle the background color when clicked
     setIsClickedGP(!isClicked);
+    navigator.navigate('ScreenThree')
   };
-  const navigator = useNavigation();
   const handleBackNavigation = () => {
     navigation.goBack(); // Use the appropriate navigation function for your navigation stack
   };

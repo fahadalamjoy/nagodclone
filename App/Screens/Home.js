@@ -13,6 +13,8 @@ export default function Home() {
   const navigator = useNavigation();
   const [CerviceData, setServiceData] = React.useState([]);
   const [PaymentsData, setPaymentsData] = React.useState([]);
+  const [taka, setTaka] = React.useState(false);
+
   useEffect(() => {
     setServiceData(ServiceData);
     setPaymentsData(PaymentData);
@@ -31,11 +33,20 @@ export default function Home() {
             <Text style={tw`text-5xl font-bold text-white`}>নগদ </Text>
             <Text style={tw`text-xs text-white`}>ডাক বিভাগের ডিজিটাল লেনদেন </Text>
             <Text style={tw`text-base text-white py-2`}>Fahad Alam Joy </Text>
-            <TouchableOpacity style={tw`bg-white py-2 items-center  justify-between rounded-full px-3`} onPress={() => navigator.navigate('Login')}>
-                <View style={tw`flex-row items-center justify-center `}>
+            <TouchableOpacity style={tw`bg-white py-2 items-center  justify-between rounded-full px-3`} onPress={() => setTaka(!taka)}>
+              {
+                taka ? (
+                  <View style={tw`flex-row items-center justify-center px-6`}>
+                    <Text style={tw`pl-2 text-base text-red-500 font-bold`}>5000</Text>
+                  </View>
+                ): (
+                  <View style={tw`flex-row items-center justify-center `}>
                     <Image source={require('../../assets/home.png')}/>
                     <Text style={tw`pl-2 text-sm text-red-500 font-bold`}>Tab for Balance</Text>
                 </View>
+                )
+              }
+                
             </TouchableOpacity>
           </View>
         </ImageBackground>

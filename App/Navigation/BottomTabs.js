@@ -20,6 +20,8 @@ export default function BottomTabs() {
             paddingRight: 10,
             paddingLeft: 10,
             height: 50,
+            paddingBottom: 10,
+            height: 60
         }
 
       }}
